@@ -1,0 +1,70 @@
+<section class="vh-100" style="background-color: #ffffff;">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-md-6 d-flex align-items-center justify-content-end pl-md-5">
+        <img src="../../assets/Login.avif" alt="login form" class="img-fluid" style="max-height: 80vh;">
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="login-form">
+          <h1 class="text-primary text-center mb-5" style="font-family: 'Arial', sans-serif; font-weight: bold; font-size: 2.5rem;">SignUp</h1>
+          <div class="form-group mb-4">
+            <label for="email" class="form-label text-dark">Full Name</label>
+                    <input type="text" class="form-control form-control-lg rounded-pill" required pattern="[a-zA-Z0-9]*"
+                      placeholder="Name" id="name" name="name" #id="ngModel" [(ngModel)]="register.name" />
+                    <div *ngIf="(id?.dirty || id?.touched)" class="text-danger">
+                      <div *ngIf="!id?.valid">
+                        <div *ngIf="id.errors?.['required']">
+                          Name is required
+                        </div>
+                        <div *ngIf="id.value && id.errors && !id.errors?.['required']">
+                          Please enter a valid input [Name should not contain special characters]
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="email" class="form-label text-dark">Email Address</label>
+                    <input type="email" class="form-control form-control-lg rounded-pill" placeholder="Email" name="email"
+                      [(ngModel)]="register.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+                      #email="ngModel" />
+                    <div *ngIf="email.invalid && email.touched" class="text-danger">
+                      <div *ngIf="email.errors?.['required']">Email is required.</div>
+                      <div *ngIf="email.errors?.['pattern']">Please enter a valid email address.</div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-4">
+                    <select class="form-control form-control-lg rounded-pill" [(ngModel)]="register.role" name="role" required
+                      #role="ngModel">
+                      <option value="" disabled selected hidden>Select Role</option>
+                      <option value="Doctor">Doctor</option>
+                      <option value="User">Patient</option>
+                    </select>
+                    <div *ngIf="role.invalid && role.touched" class="text-danger">
+                      <div *ngIf="role.errors?.['required']">Role is required.</div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label for="email" class="form-label text-dark">Password</label>
+                    <input type="password" class="form-control form-control-lg rounded-pill" placeholder="Password"
+                      [(ngModel)]="register.passwordClear" name="password" required
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" #password="ngModel" />
+                    <div *ngIf="password.invalid && password.touched" class="text-danger">
+                      <div *ngIf="password.errors?.['required']">Password is required.</div>
+                      <div *ngIf="password.errors?.['pattern']">
+                        Password should contain a minimum of 8 characters with at least 1 uppercase, 1 lowercase, 1
+                        digit, and 1 special character.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pt-3 mb-4">
+                    <button class="btn btn-primary btn-lg rounded-pill" type="button" (click)="onPost()">Register</button>
+                    <div *ngIf="showError" class="text-danger">Please fill all the fields.</div>
+                  </div>
+                  <p class="mb-0">Already have an account? <a (click)="login_here()" class="link-primary" style="cursor: pointer;">Login here</a></p>
+                  <span *ngIf="registration_status">Registration successful</span>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      

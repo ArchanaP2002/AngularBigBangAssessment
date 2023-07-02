@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-dark  ">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="100px">
+      </a>    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> 
+      </button>-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/homepage" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="flag">
+            <a class="nav-link active" routerLink="/adminpage" routerLinkActive="active">Doctors Details</a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link active" routerLink="/doctordetails" routerLinkActive="active">Specialist</a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link active" routerLink="/appointment" routerLinkActive="active">Appointment</a>
+          </li>
+          <li class="nav-item mb-3" *ngIf="flag">
+            <a class="nav-link active" routerLink="/user" routerLinkActive="active">User Details</a>
+          </li>
+          <li class="nav-item mb-3" *ngIf="flag">
+            <a class="nav-link active" routerLink="/approve" routerLinkActive="active">Approval</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+<div class="container border border-grey" *ngIf="showFormDetails">
+<p>Name: {{ formDetails?.name }}</p>
+<p>Email: {{ formDetails?.email }}</p>
+<p>Role: {{ formDetails?.role }}</p>
+<p>Specialization:{{ formDetails?.specialization_name }}</p>
+
+<button class="btn btn-primary" (click)="approveForm()">
+    <i class="fas fa-check-circle"></i>&nbsp; Approve</button> &nbsp; &nbsp;
+
+<button class="btn btn-danger" (click)="declineForm()">
+    <i class="fas fa-times-circle"></i>&nbsp; Decline
+  </button>
+</div>
+
+
+<footer class="footer fixed-bottom">
+    <div class="container">
+      <br><br>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Location</h5>
+          <br>
+          <p>
+            <a href="https://goo.gl/maps/zjCXap3CQ7mpuA4u9" class="white-icons">
+              <i class="bi bi-geo-alt-fill"></i>
+            </a> Rattha Tek Meadows, Tower – A, 1st Floor
+            51, Rajiv Gandhi Salai (OMR)
+            Sholinganallur, Chennai – 600119
+            Tamil Nadu, India
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <br>
+          <p>
+            <a href="#" class="white-icons">
+              <i class="bi bi-phone-fill"></i>
+            </a>+91 4469044000
+          </p>
+          <h5>Email</h5>
+          <p>
+            <a href="#" class="white-icons">
+              <i class="bi bi-envelope-fill"></i>
+            </a> transformations@kanini.com
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <br>
+          <ul class="list-inline white-icons">
+            <li class="list-inline-item"><a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.twitter.com/"><i class="bi bi-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="text-center">© 2023  All rights reserved.</p>
+    </div>
+  </footer>
+  

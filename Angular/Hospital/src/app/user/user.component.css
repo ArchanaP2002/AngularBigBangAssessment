@@ -1,0 +1,55 @@
+.navbar{
+  background-color: rgb(132, 150, 252);
+  color: white;
+  font-weight: 100px;
+}
+.footer{
+  background-color: rgb(132, 150, 252);
+  color: white;
+  
+}
+.white-icons .bi {
+  color: white;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3; /* Adjust the opacity as desired */
+  z-index: -1; /* Place the background behind other content */
+}
+h2{
+  /* justify-content: center; */
+  align-items: center;
+}
+.table-container::before {
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the background color and transparency */
+  padding: 20px;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.table-container table {
+  background-color: transparent;
+}
+
+/* .table-container {
+  background:rgba(255, 255, 255, 0.7);  
+  padding: 20px;
+  z-index: -1;
+} */
+
+.table-container td,
+.table-container th {
+  color: black; /* Set the text color for better visibility */
+}
+
+.table-container thead th {
+  background-color: rgb(82, 107, 247);
+  color: white;
+}

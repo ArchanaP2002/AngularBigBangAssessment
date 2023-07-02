@@ -1,0 +1,53 @@
+.navbar{
+  background-color: rgb(132, 150, 252);
+  color: white;
+  font-weight: 100px;
+}
+.footer{
+  background-color: rgb(132, 150, 252);
+  color: white;
+  
+}
+.white-icons .bi {
+  color: white;
+}
+
+ 
+  .list{
+    margin-top: 20px;
+  }
+
+  
+  .card {
+    flex: 1 0 300px; /* Adjust the width of each card */
+    margin: 10px; /* Add margin between the cards */
+  }
+  
+  .card-img-top {
+    height: 200px; /* Set the height of the card image */
+    object-fit: cover; /* Maintain aspect ratio and crop if needed */
+  }
+  
+  .card-body {
+    padding: 10px; /* Adjust the padding inside the card body */
+  }
+  
+  .card-title {
+    font-size: 16px; /* Adjust the font size of the card title */
+  }
+  .card-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  
+  
+  .card-text {
+    font-size: 14px; /* Adjust the font size of the card text */
+  }
+  
+  .btn {
+    font-size: 14px; /* Adjust the font size of the buttons inside the card */
+    padding: 5px 10px; /* Adjust the padding of the buttons inside the card */
+  }
+  
