@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark  ">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="100px">
@@ -11,8 +11,8 @@
         <li class="nav-item">
           <a class="nav-link active" routerLink="/homepage" routerLinkActive="active">Dashboard</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/adminpage" routerLinkActive="active">Doctor Details</a>
+        <li class="nav-item" *ngIf="flag">
+          <a class="nav-link active" routerLink="/adminpage" routerLinkActive="active">Doctors Details</a>
         </li>
         <li class="nav-item mb-3">
           <a class="nav-link active" routerLink="/doctordetails" routerLinkActive="active">Specialist</a>
@@ -20,13 +20,13 @@
         <li class="nav-item mb-3">
           <a class="nav-link active" routerLink="/appointment" routerLinkActive="active">Appointment</a>
         </li>
-        <li class="nav-item mb-3" *ngIf="flag">
+        <li class="nav-item mb-3" *ngIf="flag || flaguser" >
           <a class="nav-link active" routerLink="/user" routerLinkActive="active">User Details</a>
         </li>
         <li class="nav-item mb-3" *ngIf="flag">
           <a class="nav-link active" routerLink="/approve" routerLinkActive="active">Approval</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" >
           <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
         </li>
       </ul>
@@ -42,7 +42,7 @@
       </li>
     </ul>
   </div>
-  
+
   <div *ngIf="isFormVisible">
     <form (ngSubmit)="addOrUpdateDoctor()">
       <div class="form-group">
@@ -51,11 +51,13 @@
       </div>
       <div class="form-group">
         <label for="specialization">Specialization</label>
-        <input type="text" class="form-control" id="specialization" [(ngModel)]="newDoctor.specialization" name="specialization" required>
+        <input type="text" class="form-control" id="specialization" [(ngModel)]="newDoctor.specialization"
+          name="specialization" required>
       </div>
       <div class="form-group">
         <label for="image">Image</label>
-        <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*" required>
+        <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*"
+          required>
       </div>
       <button type="submit" class="btn btn-primary">{{ newDoctor.id ? 'Update' : 'Add' }}</button>
       <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
@@ -74,8 +76,8 @@
       </div>
     </div>
   </div>
-  
 
+</div>
   <footer class="footer ">
     <div class="container">
       <br><br>
@@ -118,7 +120,6 @@
         </div>
       </div>
       <hr>
-      <p class="text-center">© 2023  All rights reserved.</p>
+      <p class="text-center">© 2023 All rights reserved.</p>
     </div>
   </footer>
-  

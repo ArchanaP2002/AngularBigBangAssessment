@@ -20,7 +20,7 @@
         <li class="nav-item mb-3">
           <a class="nav-link active" routerLink="/appointment" routerLinkActive="active">Appointment</a>
         </li>
-        <li class="nav-item mb-3" *ngIf="flag">
+        <li class="nav-item mb-3" *ngIf="flag || flaguser" >
           <a class="nav-link active" routerLink="/user" routerLinkActive="active">User Details</a>
         </li>
         <li class="nav-item mb-3" *ngIf="flag">
@@ -43,7 +43,7 @@
     <div class="card-body border">
       <h5 class="card-title">Book an Appointment</h5>
       <p class="card-text">Click below to schedule your appointment with our doctors.</p>
-      <a href="/appointment" class="btn btn-primary">Schedule Now</a>
+      <a routerLink="/appointment" class="btn btn-primary">Schedule Now</a>
     </div>
   </div>
  
@@ -68,9 +68,9 @@
     <div class="col-md-4">
       <div class="card bg-transparent">
         <div class="card-body border">
-          <h5 class="card-title"><i class="bi bi-shield-lock"></i> Safety & Security</h5>
+          <h5 class="card-title"><i class="bi bi-shield-lock"  ></i> Safety & Security</h5>
           <ul class="card-text">
-            <li>Confidentiality is a priority! With the practice management software, data is safe and secure</li>
+            <li>Confidentiality is a priority! With the practice management software, data is safe and secure</li><br>
             <li>We comply with international data norms</li>
           </ul>
         </div>
@@ -79,7 +79,7 @@
     <div class="col-md-4">
       <div class="card bg-transparent">
         <div class="card-body border" >
-          <h5 class="card-title"><i class="bi bi-file-earmark-text"></i> Patient Records</h5>
+          <h5 class="card-title"><i class="bi bi-file-earmark-text" ></i> Patient Records</h5>
           <ul class="card-text">
             <li>Keep track of your patient visits & history easily and digitally!</li>
             <li>Printed prescriptions for easy understanding</li>

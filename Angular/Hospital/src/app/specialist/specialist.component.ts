@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpecialistComponent implements OnInit {
   flag:boolean = false;
+  flaguser:boolean = false;
+
   doctorList: any[];
   specializationFilter: string;
 
@@ -16,10 +18,10 @@ export class SpecialistComponent implements OnInit {
     {
       this.flag=true;
     }
-    // if (localStorage.getItem("role")=="Doctor")
-    // {
-    //   this.flag=true;
-    // }
+    if (localStorage.getItem("role")=="Doctor")
+    {
+      this.flaguser=true;
+    }
     
   }
 

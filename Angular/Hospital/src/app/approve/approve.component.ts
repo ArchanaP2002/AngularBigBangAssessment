@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApproveComponent implements OnInit{
 
   flag:boolean = false;
+  flaguser:boolean = false;
 
   formDetails:any;
   showFormDetails=true;
@@ -26,7 +27,7 @@ constructor(private signupService: SignupService,private http:HttpClient){
   }
   if (localStorage.getItem("role")=="Doctor")
   {
-    this.flag=true;
+    this.flaguser=true;
   }
 }
 

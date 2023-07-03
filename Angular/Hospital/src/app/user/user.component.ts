@@ -12,13 +12,14 @@ export class UserComponent implements OnInit {
   patients: any[];
   swaggerUrl: string = 'https://localhost:7120/api/patient';
   flag: boolean = false;
+  flaguser:boolean = false;
 
   constructor(private http: HttpClient) {
     if (localStorage.getItem("role") == "Admin") {
       this.flag = true;
     }
     if (localStorage.getItem("role") == "Doctor") {
-      this.flag = true;
+      this.flaguser= true;
     }
   }
 

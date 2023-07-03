@@ -21,14 +21,7 @@
   
     border-radius: 20px;
   }
-  /* .background{
-    background-image: url('https://mobisoftinfotech.com/resources/wp-content/uploads/2018/07/Banner-1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-	position: absolute;
-    margin-top: 10px;
-  } */
-
+ 
   .video-background {
 	position: absolute;
 	top: 120px;
@@ -50,33 +43,16 @@
     margin: 10px;  
     background-color: #c5d2e7;
   }
-  
-  /* .card-img-top {
-    height: 200px; 
-    object-fit: cover; 
-  } */
-/*   
-  .card-body {
-    padding: 10px;  
-  }
-  
-  .card-title {
-    font-size: 16px;  
-  }
-  .card-columns {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-  } */
+ 
   
   
   .card-text {
-    font-size: 14px; /* Adjust the font size of the card text */
+    font-size: 14px;  
   }
   
   .btn {
-    font-size: 14px; /* Adjust the font size of the buttons inside the card */
-    padding: 5px 10px; /* Adjust the padding of the buttons inside the card */
+    font-size: 14px;  
+    padding: 5px 10px;  
   }
   
  .cards{

@@ -10,11 +10,16 @@ import { Router } from '@angular/router';
 export class HomepageComponent 
 {
   flag:boolean = false;
+  flaguser:boolean = false;
   constructor()
   {
     if (localStorage.getItem("role")=="Admin")
     {
       this.flag=true;
+    }
+    if (localStorage.getItem("role")=="Doctor")
+    {
+      this.flaguser=true;
     }
  
     

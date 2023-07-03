@@ -15,6 +15,7 @@ export interface DoctorDetails {
 })
 export class AdminpageComponent implements OnInit {
   flag: boolean = false;
+  flaguser:boolean = false;
   doctorList: DoctorDetails[] = [];
   newDoctor: DoctorDetails = {
     id: 0,

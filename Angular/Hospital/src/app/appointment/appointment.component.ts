@@ -10,6 +10,7 @@ import { Appointment } from './appointment.model';
 })
 export class AppointmentComponent {
   flag:boolean = false;
+  flaguser:boolean = false;
   appointmentData: Appointment = {
     id: 0,
     name: '',
@@ -25,10 +26,10 @@ export class AppointmentComponent {
     {
       this.flag=true;
     }
-    // if (localStorage.getItem("role")=="Doctor")
-    // {
-    //   this.flag=true;
-    // }
+    if (localStorage.getItem("role")=="Doctor")
+    {
+      this.flaguser=true;
+    }
     
   }
 

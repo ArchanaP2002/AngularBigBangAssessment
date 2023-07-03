@@ -20,7 +20,7 @@
         <li class="nav-item mb-3">
           <a class="nav-link active" routerLink="/appointment" routerLinkActive="active">Appointment</a>
         </li>
-        <li class="nav-item mb-3" *ngIf="flag">
+        <li class="nav-item mb-3" *ngIf="flag || flaguser" >
           <a class="nav-link active" routerLink="/user" routerLinkActive="active">User Details</a>
         </li>
         <li class="nav-item mb-3" *ngIf="flag">
