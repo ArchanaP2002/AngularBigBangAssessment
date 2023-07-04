@@ -146,6 +146,22 @@ namespace Hospital.Controllers
             }
         }
 
+        [HttpGet("count")]
+        public IActionResult GetCount()
+        {
+            try
+            {
+                var count = _context.DoctorDetails.Count();
+
+                return Ok(count);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
 
     }
 }

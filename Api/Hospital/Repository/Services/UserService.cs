@@ -3,19 +3,24 @@ using Hospital.Models;
 using Hospital.Repository.Interface;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Hospital.Data;
 
 namespace Hospital.Repository.Services
 {
     public class UserService
     {
-        private IbaseRepo<string, User> _repo;
-        private ITokenGenerate _tokenService;
+        private readonly IbaseRepo<string, User> _repo;
+        private readonly ITokenGenerate _tokenService;
+        private readonly HospitalContext _dbContext;
 
-        public UserService(IbaseRepo<string, User> repo, ITokenGenerate tokenGenerate)
+        public UserService(IbaseRepo<string, User> repo, ITokenGenerate tokenGenerate, HospitalContext dbContext)
         {
             _repo = repo;
             _tokenService = tokenGenerate;
+            _dbContext = dbContext;
         }
+
         public UserDTO Login(UserDTO userDTO)
         {
             UserDTO user = null;
@@ -36,6 +41,7 @@ namespace Hospital.Repository.Services
             }
             return user;
         }
+
         public UserDTO Register(UserRegisterDTO userDTO)
         {
             UserDTO user = null;
@@ -52,6 +58,16 @@ namespace Hospital.Repository.Services
                 user.Token = _tokenService.GenerateToken(user);
             }
             return user;
+        }
+
+        public int GetDoctorCount()
+        {
+            return _dbContext.Users.Count(u => u.Role == "Doctor");
+        }
+
+        public int GetUserCount()
+        {
+            return _dbContext.Users.Count(u => u.Role == "User");
         }
     }
 }

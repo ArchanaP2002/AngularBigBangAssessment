@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\archa\\source\\repos\\Hospital\\Hospital.csproj": {}
+    "C:\\Users\\archa\\Downloads\\Angular\\Api\\Hospital\\Hospital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\archa\\source\\repos\\Hospital\\Hospital.csproj": {
+    "C:\\Users\\archa\\Downloads\\Angular\\Api\\Hospital\\Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\archa\\source\\repos\\Hospital\\Hospital.csproj",
+        "projectUniqueName": "C:\\Users\\archa\\Downloads\\Angular\\Api\\Hospital\\Hospital.csproj",
         "projectName": "Hospital",
-        "projectPath": "C:\\Users\\archa\\source\\repos\\Hospital\\Hospital.csproj",
+        "projectPath": "C:\\Users\\archa\\Downloads\\Angular\\Api\\Hospital\\Hospital.csproj",
         "packagesPath": "C:\\Users\\archa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\archa\\source\\repos\\Hospital\\obj\\",
+        "outputPath": "C:\\Users\\archa\\Downloads\\Angular\\Api\\Hospital\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\archa\\AppData\\Roaming\\NuGet\\NuGet.Config",

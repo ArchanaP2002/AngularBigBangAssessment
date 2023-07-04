@@ -3,6 +3,7 @@ using Hospital.Repository.Services;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
 {
@@ -12,10 +13,12 @@ namespace Hospital.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserService _service;
+
         public UserController(UserService service)
         {
             _service = service;
         }
+
         [HttpPost("Register")]
         public ActionResult<UserDTO> Register([FromBody] UserRegisterDTO userDTO)
         {
@@ -26,6 +29,7 @@ namespace Hospital.Controllers
             }
             return Created("Home", user);
         }
+
         [HttpPost("Login")]
         public ActionResult<UserDTO> Login([FromBody] UserDTO userDTO)
         {
@@ -37,5 +41,22 @@ namespace Hospital.Controllers
             return Ok(user);
         }
 
+        [HttpGet("count")]
+        public IActionResult GetCount()
+        {
+            try
+            {
+                var doctorCount = _service.GetDoctorCount();
+                var userCount = _service.GetUserCount();
+
+                var counts = new { DoctorCount = doctorCount, UserCount = userCount };
+
+                return Ok(counts);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
