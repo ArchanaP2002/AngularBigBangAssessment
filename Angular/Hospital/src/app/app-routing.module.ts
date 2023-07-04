@@ -8,6 +8,7 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
 import { SpecialistComponent } from './specialist/specialist.component';
 import { UserComponent } from './user/user.component';
 import { ApproveComponent } from './approve/approve.component';
+import { CountComponent } from './count/count.component';
 
 const routes: Routes = [
  
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'adminpage', component:AdminpageComponent},
   { path: 'doctordetails', component: SpecialistComponent},
   {path : 'user', component: UserComponent},
-  {path : 'approve', component: ApproveComponent}
+  {path : 'approve', component: ApproveComponent},
+  { path : 'count', component:CountComponent}
 ];
 
 @NgModule({

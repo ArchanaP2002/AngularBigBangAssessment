@@ -32,7 +32,7 @@ export class SpecialistComponent implements OnInit {
   fetchDoctorList() {
     let url = 'https://localhost:7120/api/DoctorDetails';
 
-    // Apply specialization filter if specified
+   
     if (this.specializationFilter) {
       url += '/filter?specialization=' + this.specializationFilter;
     }

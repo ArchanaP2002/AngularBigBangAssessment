@@ -47,17 +47,7 @@
   button[type="submit"]:hover {
     background-color: rgb(72, 8, 247);
   }
-  /* #container {
-    margin-top: 40px;
-    background-image: url('https://mobisoftinfotech.com/resources/wp-content/uploads/2018/07/Banner-1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  } */
+ 
   .background{
     background-image: url('https://mobisoftinfotech.com/resources/wp-content/uploads/2018/07/Banner-1.png');
     background-repeat: no-repeat;

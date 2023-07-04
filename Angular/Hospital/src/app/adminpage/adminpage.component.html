@@ -26,43 +26,56 @@
         <li class="nav-item mb-3" *ngIf="flag">
           <a class="nav-link active" routerLink="/approve" routerLinkActive="active">Approval</a>
         </li>
+        <li class="nav-item mb-3" *ngIf="flag">
+          <a class="nav-link active" routerLink="/count" routerLinkActive="active">Patient Doctor Statistics</a>
+        </li>
         <li class="nav-item" >
-          <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
+          <a class="nav-link active" routerLink="/login" routerLinkActive="active">Logout</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <div *ngIf="flag">
-    <ul class="nav flex-column">
-      <li class="nav-item mb-3">
-        <button class="btn btn-primary" (click)="toggleForm()">Add Doctor</button>
-      </li>
-    </ul>
+<!---->
+  
+<div class="container form-container">
+<div class="row">
+  <!-- <div class="card"> -->
+    <div *ngIf="flag">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-3">
+          <button class="btn btn-primary" (click)="toggleForm()">Add Doctor</button>
+        </li>
+      </ul>
+    </div>
+  
+    <div *ngIf="isFormVisible">
+      <form (ngSubmit)="addOrUpdateDoctor()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="newDoctor.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="specialization">Specialization</label>
+          <input type="text" class="form-control" id="specialization" [(ngModel)]="newDoctor.specialization"
+            name="specialization" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*"
+            required>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ newDoctor.id ? 'Update' : 'Add' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
+      </form>
+    <!-- </div> -->
+   
   </div>
 
-  <div *ngIf="isFormVisible">
-    <form (ngSubmit)="addOrUpdateDoctor()">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="newDoctor.name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="specialization">Specialization</label>
-        <input type="text" class="form-control" id="specialization" [(ngModel)]="newDoctor.specialization"
-          name="specialization" required>
-      </div>
-      <div class="form-group">
-        <label for="image">Image</label>
-        <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*"
-          required>
-      </div>
-      <button type="submit" class="btn btn-primary">{{ newDoctor.id ? 'Update' : 'Add' }}</button>
-      <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
-    </form>
-  </div>
+</div>
+
+
   <div class="row">
     <div *ngFor="let doctor of doctorList" class="col-md-4">
       <div class="card">
@@ -77,6 +90,7 @@
     </div>
   </div>
 
+  
 </div>
   <footer class="footer ">
     <div class="container">

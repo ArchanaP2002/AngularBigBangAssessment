@@ -26,6 +26,9 @@
         <li class="nav-item mb-3" *ngIf="flag">
           <a class="nav-link active" routerLink="/approve" routerLinkActive="active">Approval</a>
         </li>
+        <li class="nav-item mb-3" *ngIf="flag">
+          <a class="nav-link active" routerLink="/count" routerLinkActive="active">Patient Doctor Statistics</a>
+        </li>
         <li class="nav-item" >
           <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
         </li>
@@ -34,11 +37,55 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="video-background">
+<div class="container mt-5 mb-5">
+  <!-- <div class="video-background">
     <video src="../../assets/pexels-ron-lach-7580477 (2160p).mp4" autoplay loop muted></video>
+  </div> -->
+<!-- 
+  <div>
+    <div>
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [type]="barChartType"
+              [legend]="false"
+              [plugins]="[]"
+              #chart>
+      </canvas>
+    </div>
   </div>
+   -->
+
+   <!-- <div class="container">
+    <h2>Doctor and User Count</h2>
+    <div class="chart-container">
+      <canvas #doctorCountChart width="400" height="400"></canvas>
+    </div>
+    <div class="count-details">
+      <p>Doctor Count: {{ doctorCount }}</p>
+      <p>User Count: {{ userCount }}</p>
+      <p>Available Doctor: {{ availableDoctorCount }}</p>
+    </div>
+  </div> -->
   
+  <!-- <div class="container">
+    <h2>Doctor and User Count</h2>
+    <div class="chart-container ">
+      <canvas id="doctorCountChart"></canvas>
+    </div>
+    <div class="count-details">
+      <p>Doctor Count: {{ doctorCount }}</p>
+      <p>User Count: {{ userCount }}</p>
+    </div>
+  </div>
+
+   -->
+  
+  
+  
+  
+  <!--
   <div class="card text-center" style="position: absolute; top: 50%; left: 30%; transform: translate(-50%, -50%); z-index: 1;">
     <div class="card-body border">
       <h5 class="card-title">Book an Appointment</h5>
@@ -90,8 +137,8 @@
     </div>
   </div>
 </div>
-
-  
+ -->
+</div>
 <footer class="footer">
   <div class="container">
     <br><br>

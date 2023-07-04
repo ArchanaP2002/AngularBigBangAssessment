@@ -1,14 +1,13 @@
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'chart.js';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  selector: 'app-count',
+  templateUrl: './count.component.html',
+  styleUrls: ['./count.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class CountComponent implements OnInit {
   public doctorCount: number = 0;
   public userCount: number = 0;
   public flag: boolean = false;

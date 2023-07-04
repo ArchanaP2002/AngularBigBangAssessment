@@ -14,6 +14,8 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
 import { SpecialistComponent } from './specialist/specialist.component';
 import { UserComponent } from './user/user.component';
 import { ApproveComponent } from './approve/approve.component';
+import { NgChartsModule } from 'ng2-charts';
+import { CountComponent } from './count/count.component';
  
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ApproveComponent } from './approve/approve.component';
     AdminpageComponent,
     SpecialistComponent,
     UserComponent,
-    ApproveComponent
+    ApproveComponent,
+    CountComponent
      
   ],
   imports: [
@@ -33,7 +36,8 @@ import { ApproveComponent } from './approve/approve.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [SignupService],
   bootstrap: [AppComponent]

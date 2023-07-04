@@ -1,0 +1,186 @@
+<nav class="navbar navbar-expand-lg navbar-dark  ">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="100px">
+      </a>    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> 
+      </button>-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/homepage" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="flag">
+            <a class="nav-link active" routerLink="/adminpage" routerLinkActive="active">Doctors Details</a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link active" routerLink="/doctordetails" routerLinkActive="active">Specialist</a>
+          </li>
+          <li class="nav-item mb-3">
+            <a class="nav-link active" routerLink="/appointment" routerLinkActive="active">Appointment</a>
+          </li>
+          <li class="nav-item mb-3" *ngIf="flag || flaguser" >
+            <a class="nav-link active" routerLink="/user" routerLinkActive="active">User Details</a>
+          </li>
+          <li class="nav-item mb-3" *ngIf="flag">
+            <a class="nav-link active" routerLink="/approve" routerLinkActive="active">Approval</a>
+          </li>
+          <li class="nav-item mb-3" *ngIf="flag">
+            <a class="nav-link active" routerLink="/count" routerLinkActive="active">Patient Doctor Statistics</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5 mb-5">
+    <!-- <div class="video-background">
+      <video src="../../assets/pexels-ron-lach-7580477 (2160p).mp4" autoplay loop muted></video>
+    </div> -->
+  <!-- 
+    <div>
+      <div>
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [type]="barChartType"
+                [legend]="false"
+                [plugins]="[]"
+                #chart>
+        </canvas>
+      </div>
+    </div>
+     -->
+  
+     <!-- <div class="container">
+      <h2>Doctor and User Count</h2>
+      <div class="chart-container">
+        <canvas #doctorCountChart width="400" height="400"></canvas>
+      </div>
+      <div class="count-details">
+        <p>Doctor Count: {{ doctorCount }}</p>
+        <p>User Count: {{ userCount }}</p>
+        <p>Available Doctor: {{ availableDoctorCount }}</p>
+      </div>
+    </div> -->
+    
+    <div class="container">
+      <h2>Doctor and User Count</h2>
+      <div class="chart-container ">
+        <canvas id="doctorCountChart"></canvas>
+      </div>
+      <div class="count-details">
+        <p>Doctor Count: {{ doctorCount }}</p>
+        <p>User Count: {{ userCount }}</p>
+      </div>
+    </div>
+  
+    
+    
+    
+    
+    
+    <!--
+    <div class="card text-center" style="position: absolute; top: 50%; left: 30%; transform: translate(-50%, -50%); z-index: 1;">
+      <div class="card-body border">
+        <h5 class="card-title">Book an Appointment</h5>
+        <p class="card-text">Click below to schedule your appointment with our doctors.</p>
+        <a routerLink="/appointment" class="btn btn-primary">Schedule Now</a>
+      </div>
+    </div>
+   
+    <div class="row cards">
+      <div class="col-md-4">
+        <div class="card bg-transparent">
+          <div class="card-body border">
+            <h5 class="card-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                <path d="M14 2H2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-1 11h-1V8h1v5zm-2 0h-1V8h1v5zm-2 0H8V8h1v5zm-2 0H6V8h1v5zM3 3h10v1H3V3z"/>
+              </svg>
+              Appointments
+            </h5>
+            <ul class="card-text">
+              <li>Set up timings without any hurdle</li>
+              <li>Manage patient appointments with IVR, app, or online</li>
+              <li>Handle the queue in a waiting room instantly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-transparent">
+          <div class="card-body border">
+            <h5 class="card-title"><i class="bi bi-shield-lock"  ></i> Safety & Security</h5>
+            <ul class="card-text">
+              <li>Confidentiality is a priority! With the practice management software, data is safe and secure</li><br>
+              <li>We comply with international data norms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-transparent">
+          <div class="card-body border" >
+            <h5 class="card-title"><i class="bi bi-file-earmark-text" ></i> Patient Records</h5>
+            <ul class="card-text">
+              <li>Keep track of your patient visits & history easily and digitally!</li>
+              <li>Printed prescriptions for easy understanding</li>
+              <li>Improved care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <br><br>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Location</h5>
+          <br>
+          <p>
+            <a href="https://goo.gl/maps/zjCXap3CQ7mpuA4u9" class="white-icons">
+              <i class="bi bi-geo-alt-fill"></i>
+            </a> Rattha Tek Meadows, Tower – A, 1st Floor
+            51, Rajiv Gandhi Salai (OMR)
+            Sholinganallur, Chennai – 600119
+            Tamil Nadu, India
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <br>
+          <p>
+            <a href="#" class="white-icons">
+              <i class="bi bi-phone-fill"></i>
+            </a>+91 4469044000
+          </p>
+          <h5>Email</h5>
+          <p>
+            <a href="#" class="white-icons">
+              <i class="bi bi-envelope-fill"></i>
+            </a> transformations@kanini.com
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <br>
+          <ul class="list-inline white-icons">
+            <li class="list-inline-item"><a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.twitter.com/"><i class="bi bi-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="text-center">© 2023  All rights reserved.</p>
+    </div>
+  </footer>
+  
