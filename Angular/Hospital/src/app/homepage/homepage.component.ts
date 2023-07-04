@@ -8,9 +8,8 @@ import { Chart } from 'chart.js';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
-  public doctorCount: number = 0;
-  public userCount: number = 0;
+export class HomepageComponent  {
+ 
   public flag: boolean = false;
   public flaguser: boolean = false;
 
@@ -23,72 +22,5 @@ export class HomepageComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.fetchCounts();
-  }
-
-  fetchCounts() {
-    this.http.get<any>('https://localhost:7120/api/User/count').subscribe(data => {
-      this.doctorCount = data.doctorCount;
-      this.userCount = data.userCount;
-      this.createChart();
-    });
-  }
-
-  createChart() {
-    const total = this.doctorCount + this.userCount;
-    const doctorPercentage = (this.doctorCount / total) * 100;
-    const userPercentage = (this.userCount / total) * 100;
-
-    const canvas = document.getElementById('doctorCountChart') as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d');
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Doctors', 'Users'],
-        datasets: [{
-          label: 'Percentage',
-          data: [doctorPercentage, userPercentage],
-          backgroundColor: [
-            'rgba(75, 192, 192, 0.8)',
-            'rgba(192, 75, 75, 0.8)'
-          ],
-          borderColor: [
-            'rgba(75, 192, 192, 1)',
-            'rgba(192, 75, 75, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            grid: {
-              display: false
-            }
-          },
-          y: {
-            beginAtZero: true,
-            ticks: {
-              precision: 0,
-              callback: function (value: number) {
-                return value + "%";
-              }
-            },
-            grid: {
-              color: '#e9ecef'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
-      }
-    });
-  }
+ 
 }

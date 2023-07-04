@@ -56,7 +56,7 @@ ngOnInit() {
     this.registration_status1 = true;
     setTimeout(() => {
       this.router.navigate(['login']);
-    }, 3000);
+    }, 2000);
   }
   else{
     this.signupService.signup(this.register).subscribe(data=>{
@@ -71,9 +71,7 @@ ngOnInit() {
             setTimeout(() => {
               this.router.navigate(['login']);
             }, 3000);
-            // alert(`\t ........Registration successfull........
-            //   \n your user id is : ${this.loggedInUser.id} and your password is first 4 letters of your name + your birth date and month `);
-            
+           
           },
           err=>{
             console.log(err)

@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark  ">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="70px">
-    </a>  
+      <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="50px">
+    </a>     
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
@@ -26,18 +26,19 @@
         <li class="nav-item mb-3" *ngIf="flag">
           <a class="nav-link active" routerLink="/count" routerLinkActive="active">Patient Doctor Statistics</a>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item mb-3" >
           <a class="nav-link active" routerLink="/login" routerLinkActive="active">Logout</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+ 
 
   <section class="background">
-  <div class="container"id="container">
-    <form class="appointment-form" (ngSubmit)="registerAppointment()" #appointmentForm="ngForm">
-      <div class="form-group">
+  <div  id="container">
+    <form class="appointment-form" (ngSubmit)="registerAppointment(appointmentForm)" #appointmentForm="ngForm">
+      <div class="form-group with-background">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" [(ngModel)]="appointmentData.name" required>
       </div>

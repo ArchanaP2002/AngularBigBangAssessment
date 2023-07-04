@@ -2,9 +2,11 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    /* background-color: #f9f9f9; */
+    background-color: rgba(255, 255, 255, 0.3); 
+    margin-left: 15%;
   }
 
   .form-group {
@@ -24,9 +26,10 @@
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
     font-family: inherit;
+    background-color: rgba(249, 249, 249, 0.8); 
   }
   
   textarea {
@@ -49,13 +52,14 @@
   }
  
   .background{
-    background-image: url('https://mobisoftinfotech.com/resources/wp-content/uploads/2018/07/Banner-1.png');
+    background-image: url('../../assets/appointment1.webp');
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
   
-  
+   
  
   .navbar{
     background-color: rgb(132, 150, 252);

@@ -1,11 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark  ">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="100px">
-    </a>    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span> 
-    </button>-->
+      <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="50px">
+    </a>     
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
@@ -29,64 +26,25 @@
         <li class="nav-item mb-3" *ngIf="flag">
           <a class="nav-link active" routerLink="/count" routerLinkActive="active">Patient Doctor Statistics</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
+        <li class="nav-item mb-3" >
+          <a class="nav-link active" routerLink="/login" routerLinkActive="active">Logout</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
+<marquee width="90%" direction="left" height="100px" class=" ml-5">
+  A hospital is a specialized medical facility where individuals receive diagnosis, treatment, and care for various illnesses, injuries, and medical conditions. It is an institution that is equipped with medical professionals, such as doctors, nurses, and specialists, as well as advanced medical technology and equipment.
+  </marquee>
 <div class="container mt-5 mb-5">
-  <!-- <div class="video-background">
-    <video src="../../assets/pexels-ron-lach-7580477 (2160p).mp4" autoplay loop muted></video>
-  </div> -->
-<!-- 
-  <div>
-    <div>
-      <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [type]="barChartType"
-              [legend]="false"
-              [plugins]="[]"
-              #chart>
-      </canvas>
-    </div>
+  <div class="video-background">
+    <video src="../../assets/pexels-ron-lach-7579331 (2160p).mp4" autoplay loop muted></video>
   </div>
-   -->
-
-   <!-- <div class="container">
-    <h2>Doctor and User Count</h2>
-    <div class="chart-container">
-      <canvas #doctorCountChart width="400" height="400"></canvas>
-    </div>
-    <div class="count-details">
-      <p>Doctor Count: {{ doctorCount }}</p>
-      <p>User Count: {{ userCount }}</p>
-      <p>Available Doctor: {{ availableDoctorCount }}</p>
-    </div>
-  </div> -->
-  
-  <!-- <div class="container">
-    <h2>Doctor and User Count</h2>
-    <div class="chart-container ">
-      <canvas id="doctorCountChart"></canvas>
-    </div>
-    <div class="count-details">
-      <p>Doctor Count: {{ doctorCount }}</p>
-      <p>User Count: {{ userCount }}</p>
-    </div>
-  </div>
-
-   -->
+ 
+ 
   
   
-  
-  
-  <!--
-  <div class="card text-center" style="position: absolute; top: 50%; left: 30%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="card text-center" style="position: absolute; top: 40%; left: 20%; transform: translate(-50%, -50%); z-index: 1;">
     <div class="card-body border">
       <h5 class="card-title">Book an Appointment</h5>
       <p class="card-text">Click below to schedule your appointment with our doctors.</p>
@@ -137,8 +95,43 @@
     </div>
   </div>
 </div>
- -->
+ 
+<div class="container">
+
+  <h2 class="overview mb-7">Over View</h2>
+  <br><br>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="container view" style="border-radius: 5px;">
+        <p>
+          A hospital is a specialized medical facility where individuals receive diagnosis, treatment, and care for various illnesses, injuries, and medical conditions. It is an institution that is equipped with medical professionals, such as doctors, nurses,
+           and specialists, as well as advanced medical technology and equipment.
+        </p>
+        <p>
+          In addition to providing medical treatment, hospitals also serve as centers for medical research, education, and training. They may collaborate with universities, medical schools, and research institutions to advance medical knowledge, 
+          conduct clinical trials, and train future healthcare professionals.
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="container view">
+        <p>
+          Hospitals play a crucial role in providing comprehensive healthcare services to individuals needs. They  conduct diagnostic tests and imaging, provide specialized treatments and therapies, manage chronic conditions, and offer rehabilitation services. Hospitals often have different departments and specialized units, such as emergency departments, operating rooms, 
+          intensive care units (ICUs), maternity wards, pediatric units, and specialized clinics.
+        </p>
+
+        <p>
+          Overall, hospitals play a vital role in promoting the health and well-being of individuals, providing a wide range of medical services,
+           and serving as a critical component of healthcare systems in many countries.
+        </p>
+      </div>
+    </div>
+  </div>
+
 </div>
+ 
+<br><br>
+
 <footer class="footer">
   <div class="container">
     <br><br>

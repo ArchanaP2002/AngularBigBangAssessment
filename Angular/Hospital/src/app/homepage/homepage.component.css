@@ -9,14 +9,13 @@
     color: white;
     
   }
-  /* .chart{
-    width: 20%;
-    height: 20%;
-  } */
-  .chart-container{
-    width: 30%;
-    height: 20%;
+ 
+  .overview{
+    text-align: center;
+    color: rgb(132, 150, 252);
+    
   }
+ 
   .white-icons .bi {
     color: white;
   }
@@ -30,6 +29,10 @@
     border-radius: 20px;
   }
  
+  .view{
+    border-color: #a4c5fa;
+    font-size: 14px; 
+  }
   .video-background {
 	position: absolute;
 	top: 120px;
@@ -64,5 +67,6 @@
   }
   
  .cards{
-  margin-top: 500px;
+  margin-top: 400px;
+  margin-bottom: 12%;
  }

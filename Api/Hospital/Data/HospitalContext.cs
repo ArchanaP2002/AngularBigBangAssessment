@@ -11,5 +11,6 @@ namespace Hospital.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<DoctorDetails> DoctorDetails { get; set; }
+        public DbSet<Approval> Approvals { get; set; }
     }
 }

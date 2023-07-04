@@ -1,11 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark  ">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="100px">
-    </a>    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span> 
-    </button>-->
+      <img src="../../assets/dpulselogo.webp" alt="Logo" style="background-color: transparent;" height="50px">
+    </a>     
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
@@ -29,22 +26,44 @@
         <li class="nav-item mb-3" *ngIf="flag">
           <a class="nav-link active" routerLink="/count" routerLinkActive="active">Patient Doctor Statistics</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link active" style="cursor:pointer;color: white;">Logout</a>
+        <li class="nav-item mb-3" >
+          <a class="nav-link active" routerLink="/login" routerLinkActive="active">Logout</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+
+
 <div class="container">
   <div class="background">
     <img src="https://medicaldialogues.in/h-upload/2020/11/05/1600x960_141858-123268-appointment.jpg" autoplay loop muted>
   </div>
 </div>
+<br>
   <div class="container ">
-    <h2>Patients</h2>
-    <div class="table-responsive"
-      style="background-image: url('https://medicaldialogues.in/state-news/tamil-nadu/tamil-nadu-cm-issues-appointment-orders-to-95-newly-recruited-specialist-doctors-71149'); background-color: #f5f5f5;">
+    <h2 style="text-align: center; color:rgb(118, 134, 228) ;">Patients Details</h2>
+   <br>
+ 
+        <div class="row " >
+          <div class="col-md-3" *ngFor="let patient of patients" style="margin-bottom: 25px;">
+            <div class="card" style="background-color: #f5f5f5;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">{{ patient.name }}</h5>
+                <p class="card-text"><strong>Gender:</strong> {{ patient.gender }}</p>
+                <p class="card-text"><strong>Age:</strong> {{ patient.age }}</p>
+                <p class="card-text"><strong>Date:</strong> {{ patient.date | date }}</p>
+                <p class="card-text"><strong>Specialization:</strong> {{ patient.specialization }}</p>
+                <p class="card-text"><strong>Reason:</strong> {{ patient.reason }}</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-center" *ngIf="!patients">No patients found.</p>
+        </div>
+   
+      
+     <!--
       <table class="table table-striped table-bordered">
         <thead class="table-dark">
           <tr>
@@ -68,6 +87,7 @@
         </tbody>
       </table>
     </div>
+  -->
     <p class="text-center" *ngIf="!patients">No patients found.</p>
   </div>
 
