@@ -3,7 +3,7 @@ import { LoggedInUserModel } from './model/loggedinuser.model';
 import { Router } from '@angular/router';
 import { SignupService } from '../service/signup.service';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-// import validation from '../helper/validation';
+ 
 
 
 @Component({
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private router :Router , private signupService : SignupService, private fb:FormBuilder)
   {
-    // this.register = new registerModel();
+ 
     this.register =
     {
       name:"",

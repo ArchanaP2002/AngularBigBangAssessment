@@ -15,7 +15,7 @@ export interface DoctorDetails {
 })
 export class AdminpageComponent implements OnInit {
   flag: boolean = false;
-  flaguser:boolean = false;
+  flaguser: boolean = false;
   doctorList: DoctorDetails[] = [];
   newDoctor: DoctorDetails = {
     id: 0,
@@ -37,7 +37,9 @@ export class AdminpageComponent implements OnInit {
   }
 
   toggleForm(): void {
-    this.isFormVisible = !this.isFormVisible;
+
+    let popup = document.getElementById('popupAdded');
+      popup?.classList.add('open');
   }
 
   onFileSelected(event: any): void {
@@ -55,14 +57,17 @@ export class AdminpageComponent implements OnInit {
 
   addOrUpdateDoctor(): void {
     if (this.newDoctor.id) {
-      // Update an existing doctor
+   
       this.updateDoctorInDatabase();
     } else {
-      // Add a new doctor
+   
       this.addDoctorToDatabase();
     }
   }
-
+  closePopupAr() {
+    let popup = document.getElementById('popupAdded');
+    popup?.classList.remove('open');
+  }
   updateDoctorInDatabase(): void {
     this.newDoctor.imgPath = this.selectedImage as string || '';
     this.http.put(`https://localhost:7120/api/DoctorDetails/${this.newDoctor.id}`, this.newDoctor)
@@ -82,14 +87,19 @@ export class AdminpageComponent implements OnInit {
         console.log('Doctor added successfully.');
         this.getDoctorList();
         this.resetForm();
+        window.location.reload()
       }, error => {
         console.log('Error occurred while adding a doctor:', error);
-      });
+      }
+      );
+      alert("Data Added")
+
   }
 
   getDoctorList(): void {
     this.http.get<DoctorDetails[]>('https://localhost:7120/api/DoctorDetails')
       .subscribe(response => {
+
         this.doctorList = response;
       }, error => {
         console.log('Error occurred while retrieving doctor list:', error);
@@ -97,23 +107,23 @@ export class AdminpageComponent implements OnInit {
   }
 
   updateDoctor(doctor: DoctorDetails): void {
-    // Set the form visibility to true
+  
     this.isFormVisible = true;
 
-    // Assign the doctor details to the newDoctor object
+ 
     this.newDoctor = { ...doctor };
 
-    // Set the selected image to the doctor's image path
+ 
     this.selectedImage = this.newDoctor.imgPath;
   }
 
   deleteDoctor(doctor: DoctorDetails): void {
     const index = this.doctorList.indexOf(doctor);
     if (index > -1) {
-      // Remove the doctor from the local array
+ 
       this.doctorList.splice(index, 1);
 
-      // Delete the doctor from the database
+ 
       this.http.delete(`https://localhost:7120/api/DoctorDetails/${doctor.id}`)
         .subscribe(() => {
           console.log('Doctor deleted successfully.');

@@ -34,11 +34,11 @@
   </div>
 </nav>
 
-<!---->
+ 
   
 <div class="container form-container">
 <div class="row">
-  <!-- <div class="card"> -->
+ 
     <div *ngIf="flag">
       <ul class="nav flex-column">
         <li class="nav-item mb-3">
@@ -46,28 +46,36 @@
         </li>
       </ul>
     </div>
-  
-    <div *ngIf="isFormVisible">
-      <form (ngSubmit)="addOrUpdateDoctor()">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" [(ngModel)]="newDoctor.name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="specialization">Specialization</label>
-          <input type="text" class="form-control" id="specialization" [(ngModel)]="newDoctor.specialization"
-            name="specialization" required>
-        </div>
-        <div class="form-group">
-          <label for="image">Image</label>
-          <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*"
-            required>
-        </div>
-        <button type="submit" class="btn btn-primary">{{ newDoctor.id ? 'Update' : 'Add' }}</button>
-        <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
-      </form>
-    <!-- </div> -->
+    <div class="dialog-box" id="popupAdded">
+
+      <i class="fa fa-xmark fa-2xl"
+        (click)="closePopupAr()"></i>
+        <form (ngSubmit)="addOrUpdateDoctor()">
+        
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newDoctor.name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="specialization">Specialization</label>
+            <input type="text" class="form-control" id="specialization" [(ngModel)]="newDoctor.specialization"
+              name="specialization" required>
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" accept="image/*"
+              required>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 cancel">
+              <button type="submit" class="btn btn-primary">{{ newDoctor.id ? 'Update' : 'Add' }}</button>
+            </div>
+ 
+          </div>
+        
+        </form>
    
+     
   </div>
 
 </div>

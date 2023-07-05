@@ -35,45 +35,14 @@ export class AppointmentComponent {
 
   registerAppointment(appointmentForm: NgForm): void {
     this.signupService.saveAppointment(this.appointmentData).subscribe(
-      (response) => {
-        // Reset the form after successful submission
-        appointmentForm.resetForm();
-        this.appointmentData = {
-          id: 0,
-          name: '',
-          gender: '',
-          age: 0,
-          date: '',
-          specialization: '',
-          reason: ''
-        };
-     
+      (res )=>{
+       
       }
+  
+    
     );
+    alert("Data Entered")
   }
   
-  /*
-  registerAppointment(): void {
-    this.signupService.saveAppointment(this.appointmentData).subscribe(
-   
-      (response) => {
-        // console.log('Appointment registered successfully:', response);
-        // Reset the form after successful submission
-        this.appointmentData = {
-          id: 0,
-          name: '',
-          gender: '',
-          age: 0,
-          date: '',
-          specialization: '',
-          reason: ''
-        };
-      },
-      (error) => {
-        console.error('Failed to register appointment:', error);
-        console.log('Status:', error.status);
-        console.log('Error message:', error.error);
-      }
-    );
-  } */
+  
 }

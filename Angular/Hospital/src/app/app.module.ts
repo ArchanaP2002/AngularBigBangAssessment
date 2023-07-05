@@ -16,7 +16,7 @@ import { UserComponent } from './user/user.component';
 import { ApproveComponent } from './approve/approve.component';
 import { NgChartsModule } from 'ng2-charts';
 import { CountComponent } from './count/count.component';
- 
+   
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,9 @@ import { CountComponent } from './count/count.component';
     SpecialistComponent,
     UserComponent,
     ApproveComponent,
-    CountComponent
+    CountComponent,
+     
+ 
      
   ],
   imports: [

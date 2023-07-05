@@ -50,6 +50,5 @@ export class SpecialistComponent implements OnInit {
   applyFilter() {
     this.fetchDoctorList();
   }
-
-  // Other component methods
+ 
 }

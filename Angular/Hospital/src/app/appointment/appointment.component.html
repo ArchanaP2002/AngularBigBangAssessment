@@ -34,7 +34,6 @@
   </div>
 </nav>
  
-
   <section class="background">
   <div  id="container">
     <form class="appointment-form" (ngSubmit)="registerAppointment(appointmentForm)" #appointmentForm="ngForm">
@@ -61,14 +60,23 @@
       </div>
       <div class="form-group">
         <label for="specialization">Specialization:</label>
-        <input type="text" id="specialization" name="specialization" [(ngModel)]="appointmentData.specialization">
+         <select id="gender" name="gender" [(ngModel)]="appointmentData.specialization" required>
+          <option value="">Select</option>
+          <option value="General Surgery">General Surgery</option>
+          <option value="ENT">ENT</option>
+          <option value="Dermatology">Dermatology</option>
+          <option value="Anesthesia">Anesthesia</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Psychiatrist">Psychiatrist</option>
+        </select>
+      
       </div>
       <div class="form-group">
         <label for="reason">Message:</label>
         <textarea id="reason" name="reason" [(ngModel)]="appointmentData.reason"></textarea>
       </div>
   
-      <!-- form fields -->
+ 
       <button type="submit" [disabled]="appointmentForm.invalid">Register Appointment</button>
     </form>
   </div>
